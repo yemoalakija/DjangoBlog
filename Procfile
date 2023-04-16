@@ -1,1 +1,1 @@
-web: gunicorn yemo-storyline.wsgi
+web: gunicorn yemos.wsgi
