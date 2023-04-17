@@ -1,8 +1,11 @@
+"""Import django models for the project"""
 from django.db import models
+# This is the User model
 from django.contrib.auth.models import User
+# Import cloudinary for image processing
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
+# This is the cuple for published blog status
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -13,12 +16,12 @@ class Post(models.Model):
     Attributes:
         title (str): The title of the blog post.
         content (str): The content of the blog post.
-        author (ForeignKey): The author of the blog post, represented by a User model.
-        created_date (DateTimeField): The date and time when the blog post was created.
-        published_date (DateTimeField): The date and time when the blog post was published.
+        author (ForeignKey): The author of the blog post.
+        created_date (DateTimeField): When the blog post was created.
+        published_date (DateTimeField): When the blog post was published.
     """
-    title = models.CharField(max_length=250, unique=True)
-    title = models.SlugField(max_length=250, unique=True)
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -45,7 +48,7 @@ class Post(models.Model):
 class Comment(models.Model):
     """Represents a comment made by a user on a post."""
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -58,4 +61,4 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return (f"Comment {self.body} by {self.name}")
+        return f"Comment {self.body} by {self.name}"
