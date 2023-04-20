@@ -32,6 +32,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['yemo-storyline.herokuapp.com', 'localhost']
 
+# TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
 
 # Application definition
 
