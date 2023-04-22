@@ -54,6 +54,7 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, "Your comment has been added.")
         else:
             comment_form = CommentForm()
 
