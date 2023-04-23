@@ -95,7 +95,8 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
+                <!-- crispy_form -->
+                <!-- where comments are written and awating approval. -->
                 {% if commented %}
                 <div class="alert alert-success d-flex align-items-center" role="alert">
                     <svg id="info-fill" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
@@ -118,27 +119,9 @@
                 </form>
                 {% endif %}
                 {% endif %}
-
-                {% if messages %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {% for message in messages %}
-                    <span>{{ message }}</span>
-                    {% endfor %}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endif %}
             </div>
         </div>
     </div>
 </div>
-<script>
-    // Auto-dismiss the sucess message after 3 seconds
-    setTimeout(function(){
-        let lert = document.querySelector(".alert-success");
-        if (alert){
-            alert.remove();
-        }
-    }, 3000);
-</script>
 
 {% endblock content %}

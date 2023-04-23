@@ -2,8 +2,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
-from .models import Post
+from django.contrib import messages
 from .forms import CommentForm
+from .models import Post
 
 
 class PostList(generic.ListView):
