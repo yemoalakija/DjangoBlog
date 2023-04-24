@@ -1,6 +1,6 @@
 """Generate views for the project"""
-from django.shortcuts import render, get_object_or_404, reverse
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.views import generic, View
 from django.contrib import messages
 from .forms import CommentForm
@@ -83,3 +83,18 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
         return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+
+    def like_post(self, request):
+        """Initialises liked post"""
+        post_id = request.POST.get("post_id")
+        post = Post.objects.get(id=post_id)
+        if request.user in post.liked.all():
+            post.liked.remove(request.user)
+            liked = False
+        else:
+            post.liked.add(request.user)
+            liked = True
+        context = {"post": post, "liked": liked}
+        if request.is_ajax():
+            return JsonResponse(context)
+        return redirect("post_detail")
