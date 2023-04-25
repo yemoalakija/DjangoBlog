@@ -29,12 +29,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'yemos', 'templates')
 SECRET_KEY = os.environ.get('YEMOS_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['yemo-storyline.herokuapp.com', 'localhost']
 
 # TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
 # Application definition
