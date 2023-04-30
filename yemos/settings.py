@@ -29,9 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'yemos', 'templates')
 SECRET_KEY = os.environ.get('YEMOS_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['yemo-storyline.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['yemo-storyline.herokuapp.com', '8000-yemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com',]
 
 # TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
 ACCOUNT_EMAIL_VERIFICATION = "none"
