@@ -1,151 +1,125 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="masthead">
-  <div class="container">
-    <div class="row g-0">
-      <div class="col-md-6 masthead-text">
-        <!-- Post title -->
-        <h1 class="post-title">{{ post.title }}</h1>
-        <!-- Post author and post's created date -->
-        <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-      </div>
-      <div class="d-none d-md-block col-md-6 masthead-image">
-        <!-- The featured image URL goes in the src attribute -->
-        {% if "placeholder" in post.featured_image.url %}
-        <img
-          src="https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg"
-          width="100%"
-        />
-        {% else %}
-        <img src=" {{ post.featured_image.url }} " width="100%" />
-        {% endif %}
-      </div>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author and post's created date -->
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg"
+                    width="100%" />
+                {% else %}
+                <img src=" {{ post.featured_image.url }} " width="100%" />
+                {% endif %}
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col card mb-4 mt-3 left top">
-      <div class="card-body">
-        <!-- The post content and safe filter -->
-        <p class="card-text">{{ post.content | safe }}</p>
-        <div class="row">
-          <div class="col-1">
-            <strong>
-              {% if user.is_authenticated %}
-              <form
-                class="d-inline"
-                action="{% url 'post_like' post.slug %}"
-                method="POST"
-              >
-                {% csrf_token %} {% if liked %}
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
+            <div class="card-body">
+                <!-- The post content and safe filter -->
+                <p class="card-text">{{ post.content | safe }}</p>
+                <div class="row">
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %} {% if liked %}
 
-                <button
-                  type="submit"
-                  name="blogpost_id"
-                  value="{{ post.slug }}"
-                  class="btn-like"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like">
+                                    <i class="fas fa-heart"></i>
+                                </button>
 
-                {% else %}
+                                {% else %}
 
-                <button
-                  type="submit"
-                  name="blogpost_id"
-                  value="{{ post.slug }}"
-                  class="btn-like"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
+                                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like">
+                                    <i class="far fa-heart"></i>
+                                </button>
 
-                {% endif %}
-              </form>
-              {% else %}
+                                {% endif %}
+                            </form>
+                            {% else %}
 
-              <span class="text-secondary"><i class="far fa-heart"></i></span>
-              {% endif %}
-              <span class="text-secondary">{{ post.number_of_likes }}</span>
-            </strong>
-          </div>
-          <div class="col-1">
-            {% with comments.count as total_comments %}
-            <strong class="text-secondary"
-              ><i class="far fa-comments"></i>
-              <!-- total_comments variable goes before the closing strong tag -->
-              {{ total_comments }}
-            </strong>
-            {% endwith %}
-          </div>
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <span class="text-secondary">{{ post.number_of_likes }}</span>
+                        </strong>
+                    </div>
+                    <div class="col-1">
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            <!-- total_comments variable goes before the closing strong tag -->
+                            {{ total_comments }}
+                        </strong>
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <hr />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
-      <h3>Comments:</h3>
-      <div class="card-body">
-        <!-- A for loop to iterate through each comment in comments -->
-        {% for comment in comments %}
-        <div class="comments" style="padding: 10px">
-          <p class="font-weight-bold">
-            <!-- The commenter's name -->
-            {{ comment.name }}
-            <span class="text-muted font-weight-normal">
-              <!-- The comment's created date -->
-              {{ comment.created_on }}
-            </span>
-            wrote:
-          </p>
-          <!-- Comment's body goes before "|" sign -->
-          {{ comment.body | linebreaks }}
+    <div class="row">
+        <div class="col">
+            <hr />
         </div>
-        <!-- Our for loop ends here -->
-        {% endfor %}
-      </div>
     </div>
-    <div class="col-md-4 card mb-4 mt-3">
-      <div class="card-body">
-        <!-- crispy_form -->
-        <!-- where comments are written and awating approval. -->
-        {% if commented %}
-        <div class="alert alert-success d-flex align-items-center" role="alert">
-          <svg
-            id="info-fill"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
-            viewBox="0 0 16 16"
-            role="img"
-            aria-label="Warning:"
-          >
-            <path
-              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-            />
-          </svg>
-          <div>Hold on, your comment is awaiting approval!</div>
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                <!-- A for loop to iterate through each comment in comments -->
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px">
+                    <p class="font-weight-bold">
+                        <!-- The commenter's name -->
+                        {{ comment.name }}
+                        <span class="text-muted font-weight-normal">
+                            <!-- The comment's created date -->
+                            {{ comment.created_on }}
+                        </span>
+                        wrote:
+                    </p>
+                    <!-- Comment's body goes before "|" sign -->
+                    {{ comment.body | linebreaks }}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
         </div>
-        {% else %} {% if user.is_authenticated %}
+        <div class="col-md-4 card mb-4 mt-3">
+            <div class="card-body">
+                <!-- crispy_form -->
+                <!-- where comments are written and awating approval. -->
+                {% if commented %}
+                <div class="alert alert-success d-flex align-items-center" role="alert">
+                    <svg id="info-fill" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+                        aria-label="Warning:">
+                        <path
+                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+                    </svg>
+                    <div>Hold on, your comment is awaiting approval!</div>
+                </div>
+                {% else %} {% if user.is_authenticated %}
 
-        <h3>Leave a comment:</h3>
-        <p>Posting as: {{ user.username }}</p>
-        <form method="post" style="margin-top: 1.3em">
-          {{ comment_form | crispy }} {% csrf_token %}
-          <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% endif %} {% endif %}
-      </div>
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em">
+                    {{ comment_form | crispy }} {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% endif %} {% endif %}
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock content %}

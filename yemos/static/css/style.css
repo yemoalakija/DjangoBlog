@@ -48,6 +48,15 @@ body {
     background-color: #3C3E40;
 }
 
+.card-img-top {
+    transition: 1s;
+}
+
+.card-img-top:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
 .author {
     color: #fff;
     margin: 4px;
