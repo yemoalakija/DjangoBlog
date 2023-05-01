@@ -9,12 +9,14 @@ body {
     color: #0A1828;
 }
 
-.red-o {
+.red-e {
     color: #E84610;
 }
 
 .thin {
-    font-weight: 300;
+    font-family: Tangerine;
+    font-size: 32px;
+    font-weight: 600;
 }
 
 .light-bg {
