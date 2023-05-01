@@ -24,5 +24,9 @@
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
 "editor.defaultFormatter": "HookyQR.beautify",
-"php.validate.enable": true
+"php.validate.enable": true,
+"editor.linkedEditing": true,
+"[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
 }
