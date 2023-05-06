@@ -82,4 +82,19 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        return JsonResponse({'likes_count': likes_count})
+        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+
+    def like_post(self, request):
+        """Initialises liked post"""
+        post_id = request.POST.get("post_id")
+        post = Post.objects.get(id=post_id)
+        if request.user in post.liked.all():
+            post.liked.remove(request.user)
+            liked = False
+        else:
+            post.liked.add(request.user)
+            liked = True
+        context = {"post": post, "liked": liked}
+        if request.is_ajax():
+            return JsonResponse(context)
+        return redirect("post_detail")
