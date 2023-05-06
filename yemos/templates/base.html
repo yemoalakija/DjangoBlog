@@ -78,7 +78,7 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by Adeyemo</p>
-        <p class="m-0 text-center text-white">Follow me: <a href="https://faceboo.com" target="blank"><i
+        <p class="m-0 text-center text-white">Follow me: <a href="https://facebook.com" target="blank"><i
                     class="fab fa-facebook-square ms-3"></i></a>
             <a href="https://www.twitter.com" target="blank"><i class="fab fa-twitter-square ms-3"></i></a>
             <a href="https://www.instagram.com" target="blank"><i class="fab fa-instagram-square ms-3"></i></a>
@@ -90,6 +90,40 @@
             let button = document.querySelector(".btn-close");
             button.click();
         }, 3000); // Auto dismiss the alert in 3secs.
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Attach a click event handler to the like button
+            $('.btn-like').click(function (event) {
+                event.preventDefault(); // Prevent the default form submit behavior
+
+                // Get the post slug from the value of the button
+                var postSlug = $(this).val();
+
+                // Send an AJAX request to toggle the like status of the post
+                $.ajax({
+                    url: "{% url 'post_like' slug=postSlug %}",
+                    method: "POST",
+                    data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        // Update the like button icon
+                        var icon = $('.btn-like[value="' + postSlug + '"] i');
+                        if (data.liked) {
+                            icon.removeClass('far').addClass('fas');
+                        } else {
+                            icon.removeClass('fas').addClass('far');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle the error
+                        console.log(xhr.responseText);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
