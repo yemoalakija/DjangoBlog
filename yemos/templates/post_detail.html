@@ -114,6 +114,19 @@
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em">
                     {{ comment_form | crispy }} {% csrf_token %}
+                    {% if comment_form.errors %}
+                        <div class="alert alert-danger">
+                            {% for field in comment_form %}
+                                {% for error in field.errors %}
+                                    {% if field.name == 'body' and error|lower == 'this field is required.' %}
+                                        <strong>{{ field.label }}:</strong> {{ error|escape }}<br>
+                                    {% elif field.name == 'body' %}
+                                        <strong>{{ field.label }}:</strong> Please enter a valid {{ field.label }}.<br>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %} {% endif %}
