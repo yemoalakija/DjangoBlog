@@ -43,6 +43,10 @@ class Post(models.Model):
     def number_of_likes(self):
         """"Returns the number of likes for the post."""
         return self.likes.count() if self.likes.exists() else 0
+    
+    def number_of_comments(self):
+        """"Returns the number of comments for the post."""
+        return self.comments.count() if self.comments.exists() else 0
 
 
 class Comment(models.Model):
