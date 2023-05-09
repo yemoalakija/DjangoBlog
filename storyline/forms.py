@@ -10,7 +10,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ("body",)
     
-    def clean_body(self, request):
+    def clean_body(self):
         """Ensure comment body is not empty or whitespace-only"""
         body = self.cleaned_data["body"]
         if not body.strip():
