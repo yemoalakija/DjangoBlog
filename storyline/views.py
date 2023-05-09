@@ -74,27 +74,18 @@ class PostDetail(View):
 
 class PostLike(View):
     """View for liking a post."""
+
     def post(self, request, slug):
-        """Toggle like status of a post"""
+        """Toggle post"""
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
-
-    def like_post(self, request):
-        """Initialises liked post"""
-        post_id = request.POST.get("post_id")
-        post = Post.objects.get(id=post_id)
-        if request.user in post.liked.all():
-            post.liked.remove(request.user)
             liked = False
         else:
-            post.liked.add(request.user)
+            post.likes.add(request.user)
             liked = True
-        context = {"post": post, "liked": liked}
+        context = {"liked": liked}
         if request.is_ajax():
             return JsonResponse(context)
-        return redirect("post_detail")
+        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
