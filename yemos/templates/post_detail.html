@@ -115,17 +115,17 @@
                 <form method="post" style="margin-top: 1.3em">
                     {{ comment_form | crispy }} {% csrf_token %}
                     {% if comment_form.errors %}
-                        <div class="alert alert-danger">
-                            {% for field in comment_form %}
-                                {% for error in field.errors %}
-                                    {% if field.name == 'body' and error|lower == 'this field is required.' %}
-                                        <strong>{{ field.label }}:</strong> {{ error|escape }}<br>
-                                    {% elif field.name == 'body' %}
-                                        <strong>{{ field.label }}:</strong> Please enter a valid {{ field.label }}.<br>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endfor %}
-                        </div>
+                    <div class="alert alert-danger">
+                        {% for field in comment_form %}
+                        {% for error in field.errors %}
+                        {% if field.name == 'body' and error|lower == 'this field is required.' %}
+                        <strong>{{ field.label }}:</strong> {{ error|escape }}<br>
+                        {% elif field.name == 'body' %}
+                        <strong>{{ field.label }}:</strong> Please enter a valid {{ field.label }}.<br>
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
                     {% endif %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
@@ -138,48 +138,60 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
         }
+        return cookieValue;
     }
-    return cookieValue;
-}
+    const csrftoken = getCookie('csrftoken');
 
-const csrftoken = getCookie('csrftoken');
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementsByTagName('form')[0];
 
-$(document).ready(function() {
-  const csrftoken = $("[name=csrfmiddlewaretoken]").val();
-  const postSlug = "{{ post.slug }}";
-  const postPk = "{{ post.pk }}";
-  const likeButton = $(".btn-like" + postPk);
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the default form submission
 
-  likeButton.click(function(e) {
-    e.preventDefault();
-    $.ajax({
-      url: "like/post_like/" + postSlug + "/",
-      method: "POST",
-      data: {
-        csrfmiddlewaretoken: csrftoken,
-        blogpost_id: postSlug,
-      },
-      success: function(data) {
-        console.log("Success:", data);
-      },
-      error: function(xhr, errmsg, err) {
-        console.error(xhr.status + ": " + xhr.responseText);
-      }
+            const formData = new FormData(form);
+            const postSlug = "{{ post.slug }}";
+
+            // Construct the URL using the generated postSlug
+            const url = `/like/${postSlug}/`;
+
+            // Make the POST request to the constructed URL
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken,
+                    mode: 'same-origin',
+                },
+                body: formData
+            })
+                .then(response => {
+                    console.log('Response:', response); // Log the response object
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    console.log('Response Text:', data.responseText); // Log the response text
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    console.log('Response Text:', error.responseText); // Log the response text
+                });
+        });
     });
-  });
-});
+
 </script>
 
 {% endblock content %}

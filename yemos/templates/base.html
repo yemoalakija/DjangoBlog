@@ -86,12 +86,11 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        window.onload = function () {
-            setTimeout(function () {
-                let button = document.querySelector(".btn-close");
-                button.click();
-            }, 3000); // Auto dismiss the alert in 3secs.
-        };
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000); // Auto dismiss the alert in 3secs.
     </script>
 </body>
 
