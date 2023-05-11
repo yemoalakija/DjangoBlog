@@ -85,7 +85,10 @@ class PostLike(View):
         else:
             post.likes.add(request.user)
             liked = True
-        context = {"liked": liked}
+        likes_count = post.likes.count()
+        context = {"liked": liked, "likes_count": likes_count}
         if request.is_ajax():
             return JsonResponse(context)
-        return HttpResponseRedirect(reverse("post_detail", args=[slug]))
+        else:
+            return JsonResponse(context, status=200)
+        # return HttpResponseRedirect(reverse("post_detail", args=[slug]))

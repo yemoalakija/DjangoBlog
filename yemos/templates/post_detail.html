@@ -51,7 +51,7 @@
 
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <span class="text-secondary">{{ post.number_of_likes }}</span>
+                            <span class="like-count" style="color:#6c757d" ;>{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
                     <div class="col-1">
@@ -138,7 +138,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-
     function getCookie(name) {
         let cookieValue = null;
         if (document.cookie && document.cookie !== '') {
@@ -154,15 +153,14 @@
         }
         return cookieValue;
     }
+
     const csrftoken = getCookie('csrftoken');
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.getElementsByTagName('form')[0];
-
-        form.addEventListener('submit', (e) => {
+    $(document).ready(function () {
+        $("form.d-inline").submit(function (e) {
             e.preventDefault(); // Prevent the default form submission
 
-            const formData = new FormData(form);
+            const formData = new FormData(this);
             const postSlug = "{{ post.slug }}";
 
             // Construct the URL using the generated postSlug
@@ -178,20 +176,28 @@
                 body: formData
             })
                 .then(response => {
-                    console.log('Response:', response); // Log the response object
+                    console.log('Response:', response);
                     return response.json();
                 })
                 .then(data => {
                     console.log('Success:', data);
-                    console.log('Response Text:', data.responseText); // Log the response text
+                    console.log('Response Text:', data.responseText);
+
+                    // Update the like button based on the response
+                    const likeButton = document.querySelector('.btn-like i');
+                    likeButton.classList.toggle('fas', data.liked);
+                    likeButton.classList.toggle('far', !data.liked);
+
+                    // Update the like count
+                    const likeCount = document.querySelector('.like-count');
+                    likeCount.textContent = data.likes_count;
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                    console.log('Response Text:', error.responseText); // Log the response text
+                    console.log('Response Text:', error.responseText);
                 });
         });
     });
-
 </script>
 
 {% endblock content %}
