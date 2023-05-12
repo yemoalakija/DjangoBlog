@@ -112,7 +112,7 @@
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em">
+                <form method="post" style="margin-top: 1.3em" onsubmit="return validateCommentForm()">
                     {{ comment_form | crispy }} {% csrf_token %}
                     {% if comment_form.errors %}
                     <div class="alert alert-danger">
@@ -181,7 +181,7 @@
                 })
                 .then(data => {
                     console.log('Success:', data);
-                    console.log('Response Text:', data.responseText);
+                    // console.log('Response Text:', data.responseText);
 
                     // Update the like button based on the response
                     const likeButton = document.querySelector('.btn-like i');
@@ -194,10 +194,26 @@
                 })
                 .catch((error) => {
                     console.error('Error:', error);
-                    console.log('Response Text:', error.responseText);
+                    // console.log('Response Text:', error.responseText);
                 });
         });
     });
+</script>
+
+<script>
+  function validateCommentForm() {
+    const commentInput = document.querySelector('#id_body');
+    const commentValue = commentInput.value.trim();
+
+    if (commentValue === '') {
+      // Display an error message or perform any desired action
+      alert('You cannot submit an empty comment. Please, enter a valid comment. Thank you.');
+      return false; // Prevent form submission
+    }
+
+    // Form validation passed, allow form submission
+    return true;
+  }
 </script>
 
 {% endblock content %}
