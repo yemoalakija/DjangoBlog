@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html class="h-100" lang="en">
 
 <head>
     <title>Storyline</title>
@@ -88,8 +88,10 @@
     <script>
         setTimeout(function () {
             let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
+            if (messages !== null) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
+            }
         }, 3000); // Auto dismiss the alert in 3secs.
     </script>
 </body>
