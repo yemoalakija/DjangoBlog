@@ -41,25 +41,31 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'django_summernote',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
-    'crispy_forms',
-    'storyline',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.sites",
+    "django.contrib.staticfiles",
+    "django_summernote",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "cloudinary_storage",
+    "cloudinary",
+    "crispy_forms",
+    "storyline",
 ]
 
 SITE_ID = 1
@@ -176,3 +182,12 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Set session cookie settings
+SESSION_COOKIE_SECURE = True  # Ensure session cookies are only sent over HTTPS
+SESSION_COOKIE_SAMESITE = (
+    "None"  # Set SameSite attribute to 'None' for cross-site requests
+)
+
+# Set CSRF cookie settings
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are only sent over HTTPS
