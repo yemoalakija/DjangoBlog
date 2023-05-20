@@ -15,16 +15,16 @@ This is a blog site.
 - [Layout](#layout)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-  - [Languages Used](#languages-used)
-  - [Frameworks, Libraries \& Programs Utilized](#frameworks-libraries--programs-utilized)
+    - [Languages Used](#languages-used)
+    - [Frameworks, Libraries \& Programs Utilized](#frameworks-libraries--programs-utilized)
 - [Testing](#testing)
 - [Deployment](#deployment)
-  - [Heroku](#heroku)
+    - [Heroku](#heroku)
   - [Initial Deployment](#initial-deployment)
 - [Credits](#credits)
-  - [Code](#code)
-  - [Post Contents and Images](#post-contents-and-images)
-  - [Acknowledgements](#acknowledgements)
+    - [Code](#code)
+    - [Post Contents and Images](#post-contents-and-images)
+    - [Acknowledgements](#acknowledgements)
 
 # Introduction
 
@@ -36,19 +36,19 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
 - #### New User's Goals
 
-        1. As a new user, my goal is to actively engage with the news site by posting, reading, and commenting on news stories.
-        2. As a first-time user, I prioritize the security of my account-related information and would like the option to sign out at the end of each session.
-        3. As a newcomer to the site, I expect a user-friendly experience that allows me to easily navigate and find the content I'm interested in.
+  - As a new user, my goal is to actively engage with the news site by posting, reading, and commenting on news stories.
+  - As a first-time user, I prioritize the security of my account-related information and would like the option to sign out at the end of each session.
+  - As a newcomer to the site, I expect a user-friendly experience that allows me to easily navigate and find the content I'm interested in.
 
 - #### Returning and Frequent User's Goals
 
-        1. As a returning user, my priority is to quickly and securely sign into my user account for seamless access.
-        2. As a frequent user of the platform, I value the ability to engage with the content by liking and commenting on posts.
-        3. As a returning and security-conscious user, I make it a point to sign out of my account at the end of each session to ensure the safety of my personal information.
+  - As a returning user, my priority is to quickly and securely sign into my user account for seamless access.
+  - As a frequent user of the platform, I value the ability to engage with the content by liking and commenting on posts.
+  - As a returning and security-conscious user, I make it a point to sign out of my account at the end of each session to ensure the safety of my personal information.
 
 - #### Site Administrator Goals
 
-        1. As a Site Administrator, I require comprehensive control over the website, including the ability to publish blogs/news, manage user data, review and moderate comments, oversee site functionality, edit content, and have the authority to remove or delete user accounts when necessary.
+  - As a Site Administrator, I require comprehensive control over the website, including the ability to publish blogs/news, manage user data, review and moderate comments, oversee site functionality, edit content, and have the authority to remove or delete user accounts when necessary.
 
 # Layout
 
@@ -92,7 +92,7 @@ In mobile phone landscape mode all columns show beside one another, however, the
 
 - [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
+- [Python](https://www.python.org)
 
 ### Frameworks, Libraries & Programs Utilized
 
