@@ -16,7 +16,7 @@ This is a blog site.
 - [Features](#features)
 - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
-    - [Frameworks, Libraries \& Programs Utilized](#frameworks-libraries--programs-utilized)
+    - [Frameworks, Libraries and Programs Utilized](#frameworks-libraries-and-programs-utilized)
 - [Testing](#testing)
 - [Deployment](#deployment)
     - [Heroku](#heroku)
@@ -94,7 +94,7 @@ In mobile phone landscape mode all columns show beside one another, however, the
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Python](https://www.python.org)
 
-### Frameworks, Libraries & Programs Utilized
+### Frameworks, Libraries and Programs Utilized
 
 1. [Django:](https://www.djangoproject.com/)
    - The website structure, functionalities, data model, and database were implemented using the Python-based Django framework.

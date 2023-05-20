@@ -12,9 +12,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" alt="featured-img"
-                                    src="https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg" />
+                                    src="https://wallup.net/wp-content/uploads/2018/03/17/540089-programmers-AutoHotkey-code-programming-laptop-ThinkPad.jpg">
                                 {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="featured-img" />
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="featured-img">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
@@ -24,7 +24,7 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">
                                 {{ post.created_on}} <i class="far fa-heart" style="padding-left: 5px"></i>
                                 {{ post.number_of_likes }} <i class="far fa-comments" style="padding-left: 5px"></i>
