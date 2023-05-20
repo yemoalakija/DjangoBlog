@@ -132,8 +132,8 @@ These testing measures were crucial in identifying and resolving any issues or e
 
 - [W3C URI Validator](https://validator.w3.org/#validate_by_uri)
   - See the [URI Validator Results]()
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
-  - See the [CSS Validator Results]()
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com%2F%23%2Fworkspaces%2FDjangoBlog&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
 - [Pylint](https://pylint.org/)
   - See the [Pylint Results]()
 
