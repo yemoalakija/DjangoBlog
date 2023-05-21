@@ -50,10 +50,17 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
   - As a Site Administrator, I require comprehensive control over the website, including the ability to publish blogs/news, manage user data, review and moderate comments, oversee site functionality, edit content, and have the authority to remove or delete user accounts when necessary.
 
+ ![Django-admin](yemos/screenshots/Django-admin.png)
+ ![Django-admin](yemos/screenshots/admin-comment-approval1.png)
+ ![Django-admin](yemos/screenshots/admin-comment-approval2.pn
+
 # Layout
 
 - ### Design
-
+  The Home Page has links six (6) interactive blogs on display. Users must first register and then subsequently can sign-in and out with email.
+  
+  ![home-page](yemos/screenshots/home-page.png)
+  
 - #### Colour Scheme
 
   - The website theme incorporates a clean and modern color scheme. The primary colors used for the header, background, footer, and text labels are white and #0A1828. Additionally, a dynamic red color is applied when hovering over blog/news links, adding an interactive element to the design.
