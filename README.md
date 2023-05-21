@@ -178,12 +178,6 @@ at early stage rather than waiting for the project to complete before deployment
 ### Post Contents and Images
 
 - Contents came from my personal research thorugh the use of google.
-- Post images came from -
-  - one
-  - two
-  - three
-  - four
-  - five
-  - six
+- As well ts the Post images.
 
 ### Acknowledgements

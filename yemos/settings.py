@@ -33,7 +33,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'yemo-storyline.herokuapp.com',
-    '8000-yemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com',
+    '8000-yemoalakija-djangoblog-nfpc65pytl.us2.codeanyapp.com',
 ]
 
 # TO PREVENT 500 ERRORS DURING LOGIN AND REGISTRATION, SO I ADD THIS LINE:
