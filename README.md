@@ -52,7 +52,7 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
  ![Django-admin](yemos/screenshots/Django-admin.png)
  ![Django-admin](yemos/screenshots/admin-comment-approval1.png)
- ![Django-admin](yemos/screenshots/admin-comment-approval2.pn
+ ![Django-admin](yemos/screenshots/admin-comment-approval2.pn)
 
 # Layout
 
@@ -143,6 +143,9 @@ These testing measures were crucial in identifying and resolving any issues or e
   - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
 - [Pylint](https://pylint.org/)
   - See the [Pylint Results]()
+  
+  - Lighthouse Test
+   ![lighthouse-test](yemos/screenshots/lighthouse-test.png)
 
 # Deployment
 
