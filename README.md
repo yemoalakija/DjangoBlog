@@ -50,17 +50,18 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
   - As a Site Administrator, I require comprehensive control over the website, including the ability to publish blogs/news, manage user data, review and moderate comments, oversee site functionality, edit content, and have the authority to remove or delete user accounts when necessary.
 
- ![Django-admin](yemos/screenshots/Django-admin.png)
- ![Django-admin](yemos/screenshots/admin-comment-approval1.png)
- ![Django-admin](yemos/screenshots/admin-comment-approval2.pn)
+![Django-admin](yemos/screenshots/Django-admin.png)
+![Django-admin](yemos/screenshots/admin-comment-approval1.png)
+![Django-admin](yemos/screenshots/admin-comment-approval2.pn)
 
 # Layout
 
 - ### Design
+
   The Home Page has links six (6) interactive blogs on display. Users must first register and then subsequently can sign-in and out with email.
-  
+
   ![home-page](yemos/screenshots/home-page.png)
-  
+
 - #### Colour Scheme
 
   - The website theme incorporates a clean and modern color scheme. The primary colors used for the header, background, footer, and text labels are white and #0A1828. Additionally, a dynamic red color is applied when hovering over blog/news links, adding an interactive element to the design.
@@ -77,9 +78,9 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
 - #### Links to Wireframes
 
-  - Home Page Wireframe - [View]()
+  - Home Page Wireframe - ![View](yemos/screenshots/wireframe_home_page.png)
 
-  - Blog/Site Page - [View]()
+  - Blog/Site Page - ![View](yemos/screenshots/wireframe_article_page.png)
 
 # Features
 
@@ -120,8 +121,8 @@ In mobile phone landscape mode all columns show beside one another, however, the
 1. [GitHub:](https://github.com/)
    - GitHub served as the repository for storing the project's code after it was pushed from Git.
 1. [Balsamiq:](https://balsamiq.com/)
-   - Balsamiq was employed during the design phase to create wireframes for the website. [Wireframes]()
-1. [Postgres database:]()
+   - Balsamiq was employed during the design phase to create wireframes for the website. [Wireframe1](yemos/screenshots/wireframe_home_page.png) [Wireframe2](yemos/screenshots/wireframe_article_page.png)
+1. [Postgres database:](https://www.postgresql.org/)
    - Postgres was chosen as the database system for the project.
 1. [Cloudinary:](https://cloudinary.com/)
    - Cloudinary was used for cloud-based storage and partly for linking website images.
@@ -142,10 +143,11 @@ These testing measures were crucial in identifying and resolving any issues or e
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com%2F%23%2Fworkspaces%2FDjangoBlog&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
 - [Pylint](https://pylint.org/)
-  - See the [Pylint Results]()
-  
+
+  - See the [Pylint Results](./yemos/screenshots/pylint_check.png)
+
   - Lighthouse Test
-   ![lighthouse-test](yemos/screenshots/lighthouse-test.png)
+    ![lighthouse-test](yemos/screenshots/lighthouse-test.png)
 
 # Deployment
 
