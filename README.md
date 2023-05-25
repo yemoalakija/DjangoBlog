@@ -144,7 +144,7 @@ These testing measures were crucial in identifying and resolving any issues or e
   - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
 - [Pylint](https://pylint.org/)
 
-  - See the [Pylint Results](./yemos/screenshots/pylint_check.png)
+  - See the pylint result ![Pylint Results](./yemos/screenshots/pylint_check.png)
 
   - Lighthouse Test
     ![lighthouse-test](yemos/screenshots/lighthouse-test.png)
