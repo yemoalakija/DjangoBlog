@@ -15,16 +15,16 @@ This is a blog site.
 - [Layout](#layout)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-    - [Languages Used](#languages-used)
-    - [Frameworks, Libraries and Programs Utilized](#frameworks-libraries-and-programs-utilized)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries and Programs Utilized](#frameworks-libraries-and-programs-utilized)
 - [Testing](#testing)
 - [Deployment](#deployment)
-    - [Heroku](#heroku)
+  - [Heroku](#heroku)
   - [Initial Deployment](#initial-deployment)
 - [Credits](#credits)
-    - [Code](#code)
-    - [Post Contents and Images](#post-contents-and-images)
-    - [Acknowledgements](#acknowledgements)
+  - [Code](#code)
+  - [Post Contents and Images](#post-contents-and-images)
+  - [Acknowledgements](#acknowledgements)
 
 # Introduction
 
