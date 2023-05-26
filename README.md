@@ -52,7 +52,7 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
 ![Django-admin](yemos/screenshots/Django-admin.png)
 ![Django-admin](yemos/screenshots/admin-comment-approval1.png)
-![Django-admin](yemos/screenshots/admin-comment-approval2.pn)
+![Django-admin](yemos/screenshots/admin-comment-approval2.png)
 
 # Layout
 
