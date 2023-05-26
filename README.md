@@ -65,6 +65,7 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 - #### Colour Scheme
 
   - The website theme incorporates a clean and modern color scheme. The primary colors used for the header, background, footer, and text labels are white and #0A1828. Additionally, a dynamic red color is applied when hovering over blog/news links, adding an interactive element to the design.
+    ![color-theme](yemos/screenshots/color_theme.png)
 
 - #### Typography
 
