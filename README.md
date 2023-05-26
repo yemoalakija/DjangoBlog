@@ -1,6 +1,6 @@
 # Milestone Project 4 - Reddit style news site for Adeyemo
 
-![All devices link]()
+![All devices link](yemos/screenshots/multidevice_responsive.png)
 
 [Click here to view the live project.](https://yemo-storyline.herokuapp.com/)
 
@@ -139,7 +139,7 @@ To ensure the quality and correctness of the project, the following testing proc
 These testing measures were crucial in identifying and resolving any issues or errors, ensuring a seamless and error-free user experience on the website.
 
 - [W3C URI Validator](https://validator.w3.org/#validate_by_uri)
-  - See the [URI Validator Results]()
+  - See the [URI Validator Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fid.codeanywhere.com%2Frealms%2Fdefault%2Fprotocol%2Fopenid-connect%2Fauth%3Fclient_id%3Dproxy%26scope%3Dopenid%2520profile%2520email%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fauth.us2.codeanyapp.com%252F_auth%252Fcallback%26nonce%3Dg5iswkHvjrMmnl4P4AG-Fn3r2RmPOdzfRM-Lp41zu54%26state%3DeyJyZXR1cm5UbyI6Imh0dHBzOi8vODAwMC15ZW1vYWxha2lqYS1kamFuZ29ibG9nLW5mcGM2NXB5dGwudXMyLmNvZGVhbnlhcHAuY29tOjQ0My8ifQ%26code_challenge_method%3DS256%26code_challenge%3DInmeIA9LorexuCC0L9eelMA6N9-_dFzRbuRrQT30xL4)
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com%2F%23%2Fworkspaces%2FDjangoBlog&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
 - [Pylint](https://pylint.org/)
@@ -161,10 +161,7 @@ The final deployemnt was carried out using codeanywhere, and GitHub connected to
 
 - ### When creating a Django project, it is highly advisable to deploy early, due to the compexities of the development process and the actual application
 
-So a text deployment was launch at the very early stage of the project to make sure that there's no any issues. And if there's issue, it'll can be easily tackled
-at early stage rather than waiting for the project to complete before deployment which would be cumbersome to debug.
-
-1.
+So a text deployment was launch at the very early stage of the project to make sure that there's no any issues. And if there's issue, it can be easily tackled at early stage rather than waiting for the project to complete before deployment which would be cumbersome to debug.
 
 # Credits
 
