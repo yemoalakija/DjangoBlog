@@ -15,16 +15,16 @@ This is a blog site.
 - [Layout](#layout)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-  - [Languages Used](#languages-used)
-  - [Frameworks, Libraries and Programs Utilized](#frameworks-libraries-and-programs-utilized)
+    - [Languages Used](#languages-used)
+    - [Frameworks, Libraries and Programs Utilized](#frameworks-libraries-and-programs-utilized)
 - [Testing](#testing)
 - [Deployment](#deployment)
-  - [Heroku](#heroku)
+    - [Heroku](#heroku)
   - [Initial Deployment](#initial-deployment)
 - [Credits](#credits)
-  - [Code](#code)
-  - [Post Contents and Images](#post-contents-and-images)
-  - [Acknowledgements](#acknowledgements)
+    - [Code](#code)
+    - [Post Contents and Images](#post-contents-and-images)
+    - [Acknowledgements](#acknowledgements)
 
 # Introduction
 
@@ -139,10 +139,12 @@ To ensure the quality and correctness of the project, the following testing proc
 
 These testing measures were crucial in identifying and resolving any issues or errors, ensuring a seamless and error-free user experience on the website.
 
-- [W3C URI Validator](https://validator.w3.org/#validate_by_uri)
-  - See the [URI Validator Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fid.codeanywhere.com%2Frealms%2Fdefault%2Fprotocol%2Fopenid-connect%2Fauth%3Fclient_id%3Dproxy%26scope%3Dopenid%2520profile%2520email%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fauth.us2.codeanyapp.com%252F_auth%252Fcallback%26nonce%3Dg5iswkHvjrMmnl4P4AG-Fn3r2RmPOdzfRM-Lp41zu54%26state%3DeyJyZXR1cm5UbyI6Imh0dHBzOi8vODAwMC15ZW1vYWxha2lqYS1kamFuZ29ibG9nLW5mcGM2NXB5dGwudXMyLmNvZGVhbnlhcHAuY29tOjQ0My8ifQ%26code_challenge_method%3DS256%26code_challenge%3DInmeIA9LorexuCC0L9eelMA6N9-_dFzRbuRrQT30xL4)
+- ### Unfixed Bugs [W3C URI Validator](https://validator.w3.org/#validate_by_uri)
+
+  - See the result ![URI Validator Results](yemos/screenshots/unfixed_bugs.PNG)
+
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fyemoalakija-djangoblog-em4n9vy7a1.us2.codeanyapp.com%2F%23%2Fworkspaces%2FDjangoBlog&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-  - See the [CSS Validator Results](./yemos/documents/css%20validation/w3c_css_validation.jpeg)
+  - See the ![CSS Validator Results](yemos/screenshots/css_validator.png)
 - [Pylint](https://pylint.org/)
 
   - See the pylint result ![Pylint Results](./yemos/screenshots/pylint_check2.png)
