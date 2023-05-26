@@ -5,11 +5,12 @@ from .models import Comment
 
 class CommentForm(forms.ModelForm):
     """Initialises comment form"""
+    # pylint: disable=too-few-public-methods
     class Meta:
         """Defines form model and field"""
         model = Comment
         fields = ("body",)
-    
+
     def clean_body(self):
         """Ensure comment body is not empty or whitespace-only"""
         body = self.cleaned_data["body"]

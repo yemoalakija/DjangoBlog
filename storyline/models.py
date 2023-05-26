@@ -31,6 +31,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
 
+    # pylint: disable=too-few-public-methods
     class Meta:
         """The records will be ordered by the created_on field in
             descending order (i.e., most recent first).
@@ -43,7 +44,7 @@ class Post(models.Model):
     def number_of_likes(self):
         """"Returns the number of likes for the post."""
         return self.likes.count() if self.likes.exists() else 0
-    
+
     def number_of_comments(self):
         """"Returns the number of comments for the post."""
         return self.comments.count() if self.comments.exists() else 0

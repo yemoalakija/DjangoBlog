@@ -17,6 +17,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """Displays the detail of the post."""
+
     def get(self, request, slug, *args, **kwargs):
         """Get the post to read"""
         queryset = Post.objects.filter(status=1)
