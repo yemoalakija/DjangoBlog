@@ -187,6 +187,16 @@ So a text deployment was launch at the very early stage of the project to make s
 
 - Stack Overflow was a valuable resource for researching syntax, code expressions, code functionalities, and problem-solving during the development process.
 
+You can make this repository your own by:
+```bash
+git clone https://github.com/yemoalakija/DjangoBlog
+```
+then
+```bash
+pip install -r requirements.txt
+```
+Note: register with `cloudinary` to use their service and `postgres` for database. And also you'll have to generate a `django secret key` to run the site.
+
 ### Post Contents and Images
 
 - Contents came from my personal research thorugh the use of google.
