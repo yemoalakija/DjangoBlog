@@ -191,3 +191,7 @@ So a text deployment was launch at the very early stage of the project to make s
 - As well ts the Post images.
 
 ### Acknowledgements
+
+I would like to express my sincere gratitude to Code Institute for providing me with the invaluable opportunity to learn and grow in the field of Software Development. Their comprehensive curriculum and supportive learning environment have been instrumental in my journey.
+
+I would also like to extend a special thank you to Matt Rudge, whose calm and insightful teaching during the django project has been truly remarkable. His guidance, expertise, and dedication have significantly contributed to my understanding and proficiency in Django. I am incredibly grateful for his mentorship throughout this learning experience.
