@@ -34,7 +34,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     "yemo-storyline.herokuapp.com",
-    "8000-yemoalakija-djangoblog-nfpc65pytl.us2.codeanyapp.com",
     "8000-yemoalakija-djangoblog-piv95rvhcg.us2.codeanyapp.com",
 ]
 
