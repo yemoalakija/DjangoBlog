@@ -28,5 +28,6 @@
 "editor.linkedEditing": true,
 "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
+},
+"python.formatting.provider": "black"
 }
