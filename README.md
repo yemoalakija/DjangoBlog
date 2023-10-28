@@ -1,4 +1,4 @@
-# Milestone Project 4 - Reddit style news site for Adeyemo
+# Yemo's Storyline - A Blog site.
 
 ![All devices link](yemos/screenshots/multidevice_responsive.png)
 
@@ -8,7 +8,7 @@ This is a blog site.
 
 ## Table of Contents
 
-- [Milestone Project 4 - Reddit style news site for Adeyemo](#milestone-project-4---reddit-style-news-site-for-adeyemo)
+- [Yemo's Storyline - A Blog site.](#yemos-storyline---a-blog-site)
   - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [UX](#ux)
@@ -28,7 +28,9 @@ This is a blog site.
 
 # Introduction
 
-Yemos Storyline is a dynamic news blog website that offers an engaging user experience. By utilizing Google Authentication (OAuth 2.0) as the sole login method, users can securely access the site's features. Once logged in, users have the ability to upvote or downvote posts and actively participate by commenting on articles. Additionally, site administrators possess exclusive privileges, including the ability to publish blog/news posts and approve or disapprove user comments. With a focus on accessibility, Yemos Storyline is designed to seamlessly adapt to various devices, ensuring a fully responsive experience on desktops, laptops, tablets, and mobile devices.
+Yemos Storyline is a dynamic news blog website that offers an engaging user experience. By utilizing Google Authentication (OAuth 2.0) as the sole login method, users can securely access the site's features. Once logged in, users have the ability to upvote or downvote posts and actively participate by commenting on articles.
+
+Additionally, site administrators possess exclusive privileges, including the ability to publish blog/news posts and approve or disapprove user comments. With a focus on accessibility, Yemos Storyline is designed to seamlessly adapt to various devices, ensuring a fully responsive experience on desktops, laptops, tablets, and mobile devices.
 
 # UX
 
@@ -36,7 +38,7 @@ Yemos Storyline is a dynamic news blog website that offers an engaging user expe
 
 - #### New User's Goals
 
-  - As a new user, my goal is to actively engage with the news site by posting, reading, and commenting on news stories.
+  - As a new user, my goal is to actively engage with the news site by reading, and commenting on news stories.
   - As a first-time user, I prioritize the security of my account-related information and would like the option to sign out at the end of each session.
   - As a newcomer to the site, I expect a user-friendly experience that allows me to easily navigate and find the content I'm interested in.
 
@@ -93,7 +95,9 @@ In mobile phone landscape mode all columns show beside one another, however, the
 
 - ### Future Enhancements
 
-- #### Expanded Login Authentication: In the future, I plan to incorporate additional login authentication options for users who don't have a Google account. This will provide more flexibility and convenience by offering alternative login methods
+- User ability to perform CRUD functionalty from the FrontEnd.
+
+- Expanded Login Authentication: In the future, I plan to incorporate additional login authentication options for users who don't have a Google account. This will provide more flexibility and convenience by offering alternative login methods
 
 # Technologies Used
 
@@ -188,13 +192,17 @@ So a text deployment was launch at the very early stage of the project to make s
 - Stack Overflow was a valuable resource for researching syntax, code expressions, code functionalities, and problem-solving during the development process.
 
 You can make this repository your own by:
+
 ```bash
 git clone https://github.com/yemoalakija/DjangoBlog
 ```
+
 then
+
 ```bash
 pip install -r requirements.txt
 ```
+
 Note: register with `cloudinary` to use their service and `postgres` for database. And also you'll have to generate a `django secret key` to run the site.
 
 ### Post Contents and Images
