@@ -168,7 +168,7 @@ The final deployemnt was carried out using codeanywhere, and GitHub connected to
 
 - ### When creating a Django project, it is highly advisable to deploy early, due to the compexities of the development process and the actual application
 
-So a text deployment was launch at the very early stage of the project to make sure that there's no any issues. And if there's issue, it can be easily tackled at early stage rather than waiting for the project to complete before deployment which would be cumbersome to debug.
+So a text deployment was launch at the very early stage of the project to make sure that there's no any issues. And if there's issue, it can be easily tackled at early stage rather than waiting for the project to complete before deployment which would be cumbersome to debug. Then seveal other deployments were launched thereafter.
 
 # Credits
 
@@ -197,10 +197,16 @@ You can make this repository your own by:
 git clone https://github.com/yemoalakija/DjangoBlog
 ```
 
-then
+and
 
 ```bash
 pip install -r requirements.txt
+```
+
+then
+
+```bash
+python manage.py runserver
 ```
 
 Note: register with `cloudinary` to use their service and `postgres` for database. And also you'll have to generate a `django secret key` to run the site.
